@@ -1,0 +1,92 @@
+{
+  "info": {
+    "name": "Recruiter Bot",
+    "description": "Demo collection for the Recruiter Bot backend. Run POST /api/ingest first.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" }
+  ],
+  "item": [
+    {
+      "name": "1. Ingest seed data",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/ingest", "host": ["{{baseUrl}}"], "path": ["api", "ingest"] }
+      }
+    },
+    {
+      "name": "Job 1 - Backend Detective: ranked candidates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/jobs/1/matches", "host": ["{{baseUrl}}"], "path": ["api", "jobs", "1", "matches"] }
+      }
+    },
+    {
+      "name": "Job 2 - Rapid Prototyping Engineer: ranked candidates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/jobs/2/matches", "host": ["{{baseUrl}}"], "path": ["api", "jobs", "2", "matches"] }
+      }
+    },
+    {
+      "name": "Job 5 - Incident Commander: ranked candidates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/jobs/5/matches", "host": ["{{baseUrl}}"], "path": ["api", "jobs", "5", "matches"] }
+      }
+    },
+    {
+      "name": "Job 6 - Sales Engineer: ranked candidates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/jobs/6/matches", "host": ["{{baseUrl}}"], "path": ["api", "jobs", "6", "matches"] }
+      }
+    },
+    {
+      "name": "Candidate 1 - Sherlock H.: ranked jobs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/candidates/1/matches", "host": ["{{baseUrl}}"], "path": ["api", "candidates", "1", "matches"] }
+      }
+    },
+    {
+      "name": "Candidate 11 - Michael S.: ranked jobs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/candidates/11/matches", "host": ["{{baseUrl}}"], "path": ["api", "candidates", "11", "matches"] }
+      }
+    },
+    {
+      "name": "Candidate 12 - Olivia P.: ranked jobs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/candidates/12/matches", "host": ["{{baseUrl}}"], "path": ["api", "candidates", "12", "matches"] }
+      }
+    },
+    {
+      "name": "Invalid job ID (expects 404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/jobs/999/matches", "host": ["{{baseUrl}}"], "path": ["api", "jobs", "999", "matches"] }
+      }
+    },
+    {
+      "name": "Invalid candidate ID (expects 404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/candidates/999/matches", "host": ["{{baseUrl}}"], "path": ["api", "candidates", "999", "matches"] }
+      }
+    }
+  ]
+}
